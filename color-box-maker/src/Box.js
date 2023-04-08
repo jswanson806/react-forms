@@ -6,7 +6,7 @@ const Box = ({ backgroundColor, height, width, remove }) => {
 
     return (
         <div className="Box-container">
-            <div className="Box" 
+            <div className="Box" role="Box"
                 style={{
                     backgroundColor:backgroundColor,
                     height:height,
