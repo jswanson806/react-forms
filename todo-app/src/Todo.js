@@ -5,7 +5,7 @@ function Todo({task, remove}){
     return(
         <div className="Todo">
             <button className="Todo-btn" onClick={remove}>X</button>
-            <li >{task}</li>
+            <li role="Task">{task}</li>
         </div>
     )
 }

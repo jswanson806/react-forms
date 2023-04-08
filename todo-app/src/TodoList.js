@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { v4 as uuid } from 'uuid';
 import Todo from './Todo';
 import NewTodoForm from './NewTodoForm';
 
@@ -6,7 +7,7 @@ function TodoList() {
     const [todos, setTodos] = useState([]);
 
     const addTodo = (task) => {
-        setTodos([...todos, {task: task}]);
+        setTodos([...todos, {id: uuid(), task: task}]);
     }
 
     const removeTodo = (todo) => {
@@ -18,7 +19,7 @@ function TodoList() {
             <NewTodoForm addTodo={addTodo}/>
 
             {todos.map((todo) => (
-                <Todo task={todo.task} remove={evt => removeTodo(todo)}/>
+                <Todo id={todo.id} task={todo.task} remove={evt => removeTodo(todo)} key={todo.id}/>
             ))}
 
         </div>
